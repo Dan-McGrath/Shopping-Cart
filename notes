@@ -1,0 +1,32 @@
+// Steps
+1. setup react router to switch between pages
+2. create homepage
+    1. 
+3. create items page
+4. create cart page
+
+
+// Shopping Cart layout
+# Home page
+nav with login/cart
+header with company name
+hero section
+recommended Items
+contact info
+
+# Item page
+nav with login/cart
+Header with company name
+secondary nav along left side for categorys of items
+items in card elements in a grid pattern
+give cards a quantity button and add to cart button 
+
+# Cart Page
+Nav with login/cart
+with company name
+list of items in cart
+if no items display message
+add remove from cart button to items
+add quantity button to allow user to change quantity
+add select payment options for cart
+add a submit to cart 
