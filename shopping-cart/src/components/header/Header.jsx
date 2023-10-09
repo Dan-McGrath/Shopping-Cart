@@ -16,7 +16,7 @@ const Header = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
     ) : (
       <header>
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src="" alt="logo" />
         </div>
         <div className="hamburger">
           <div className="open-icon" onClick={navHandler}>
@@ -28,7 +28,7 @@ const Header = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
     )
   ) : (
     <header>
-      <img src={logo} alt="logo" />
+      <img src="" alt="logo" />
       <Nav />
     </header>
   );
