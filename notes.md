@@ -1,6 +1,6 @@
 # Steps
 1. setup react router to switch between pages :white_check_mark:
-    1. create error page
+    1. create error page :white_check_mark:
 2. create homepage
     1. create nav :white_check_mark:
     2. create hero section
