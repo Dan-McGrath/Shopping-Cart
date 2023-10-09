@@ -1,7 +1,7 @@
-// Steps
+# Steps
 1. setup react router to switch between pages
 2. create homepage
-    1. create nav
+    1. create nav **complete
     2. create hero section
     3. create recommened section
     4. create contact section
@@ -22,21 +22,21 @@
 
 
 // Shopping Cart layout
-# Home page
+## Home page
 nav with login/cart
 header with company name
 hero section
 recommended Items
 contact info
 
-# Item page
+## Item page
 nav with login/cart
 Header with company name
 secondary nav along left side for categorys of items
 items in card elements in a grid pattern
 give cards a quantity button and add to cart button 
 
-# Cart Page
+## Cart Page
 Nav with login/cart
 with company name
 list of items in cart
