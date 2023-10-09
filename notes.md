@@ -1,7 +1,7 @@
 # Steps
 1. setup react router to switch between pages
 2. create homepage
-    1. create nav **complete
+    1. create nav **complete**
     2. create hero section
     3. create recommened section
     4. create contact section
