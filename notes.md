@@ -3,7 +3,7 @@
     1. create error page :white_check_mark:
 2. create homepage
     1. create nav :white_check_mark:
-    2. create hero section
+    2. create hero section :white_check_mark:
     3. create recommened section
     4. create contact section
 3. create items page
