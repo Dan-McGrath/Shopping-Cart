@@ -1,14 +1,26 @@
-const Nav = () => {
-    return (
-        <nav>
-            <img src="" alt="logo" />
-            <ul>
-                <Link>Home</Link>
-                <Link>Shopping</Link>
-                <Link>Cart</Link>
-            </ul>
-        </nav>
-    )
-}
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default Nav
+const Nav = ({ clickLinkHandler }) => {
+  return (
+    <nav>
+      <ul>
+        <li onClick={clickLinkHandler}>
+          <Link to="/">Home</Link>
+        </li>
+        <li onClick={clickLinkHandler}>
+          <Link to="/shopping">Shopping</Link>
+        </li>
+        <li onClick={clickLinkHandler}>
+          <Link to="/cart">Cart</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+Nav.propTypes = {
+  clickLinkHandler: PropTypes.func,
+};
+
+export default Nav;
