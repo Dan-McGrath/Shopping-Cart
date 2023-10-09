@@ -20,6 +20,7 @@
     5. setup second form for card info
     6. verify if cc is a good cc and the card is not expired 
     7. create confirmation if card was accepted
+5. Style pages
 
 
 # Shopping Cart layout
