@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Header from "../header/Header";
+import Hero from "./Hero";
 
 const App = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   return (
@@ -10,7 +11,7 @@ const App = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
         clickLinkHandle={clickLinkHandler}
         navIsOpen={navIsOpen}
       />
-      <h1>Hello World</h1>
+      <Hero />
     </>
   );
 };
