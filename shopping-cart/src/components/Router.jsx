@@ -1,16 +1,50 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App.jsx'
+import { useState, useEffect } from "react";
+import App from "./App.jsx";
 
 const Router = () => {
-    const router = createBrowserRouter([
-        {
-            path: '/',
-            element: <App />,
-            //errorElement: <ErrorPage />
-        }
-    ])
+  const [navIsOpen, setNavIsOpen] = useState(false);
+  const [windowDimension, setWindowDimension] = useState(null);
 
-    return <RouterProvider router={router} />;
-}
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
 
-export default Router
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimension(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowDimension <= 640;
+
+  const navHandler = () => {
+    setNavIsOpen(!navIsOpen);
+  };
+
+  const clickLinkHandler = () => {
+    setNavIsOpen(false);
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <App
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandler={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+      ),
+      //errorElement: <ErrorPage />
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+};
+
+export default Router;
