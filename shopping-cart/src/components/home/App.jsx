@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Header from "./header/Header";
+import Header from "../header/Header";
 
 const App = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   return (
