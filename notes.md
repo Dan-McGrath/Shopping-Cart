@@ -21,7 +21,7 @@
     7. create confirmation if card was accepted
 
 
-// Shopping Cart layout
+# Shopping Cart layout
 ## Home page
 nav with login/cart
 header with company name
