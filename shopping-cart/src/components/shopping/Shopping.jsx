@@ -22,5 +22,4 @@ Shopping.propTypes = {
   navIsOpen: PropTypes.bool,
 };
 
-
 export default Shopping;
