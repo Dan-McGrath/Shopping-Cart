@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import App from "./home/App.jsx";
 import Shopping from "./shopping/Shopping.jsx";
 import Cart from "./cart/Cart.jsx";
+import ErrorPage from "./ErrorPage.jsx";
 
 const Router = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const Router = () => {
           navIsOpen={navIsOpen}
         />
       ),
-      //errorElement: <ErrorPage />
+      errorElement: <ErrorPage />,
     },
     {
       path: "/shopping",
@@ -54,7 +55,7 @@ const Router = () => {
           navIsOpen={navIsOpen}
         />
       ),
-      //errorElement: <ErrorPage />
+      errorElement: <ErrorPage />,
     },
     {
       path: "/cart",
@@ -66,7 +67,7 @@ const Router = () => {
           navIsOpen={navIsOpen}
         />
       ),
-      //errorElement: <ErrorPage />
+      errorElement: <ErrorPage />,
     },
   ]);
 
