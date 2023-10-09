@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import App from "./App.jsx";
+import Shopping from "./shopping/Shopping.jsx";
+import Cart from "./cart/Cart.jsx";
 
 const Router = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -34,6 +36,30 @@ const Router = () => {
       path: "/",
       element: (
         <App
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandler={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+      ),
+      //errorElement: <ErrorPage />
+    },
+    {
+      path: "/shopping",
+      element: (
+        <Shopping
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandler={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+      ),
+      //errorElement: <ErrorPage />
+    },
+    {
+      path: "/cart",
+      element: (
+        <Cart
           isMobile={isMobile}
           navHandler={navHandler}
           clickLinkHandler={clickLinkHandler}
