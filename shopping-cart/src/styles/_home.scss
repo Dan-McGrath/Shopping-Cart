@@ -1,0 +1,44 @@
+section {
+    margin: 1em;
+    text-align: center;
+}
+
+// Product carousel
+
+.wrapper {
+    max-width: 700px;
+    margin: 2em auto;
+}
+
+.carousel {
+    display: flex;
+
+    h3 {
+        margin: 1em;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+
+        p {
+            margin: 0.3em;
+        }
+    }
+}
+
+.carousel-root {
+    outline: none;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.item {
+    max-width: 500px;
+    img {
+        max-width: 100px;
+        height: 100px;
+    }
+}
+
