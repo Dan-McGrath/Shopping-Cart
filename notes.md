@@ -5,7 +5,7 @@
     1. create nav :white_check_mark:
     2. create hero section :white_check_mark:
     3. create recommened section
-    4. create contact section
+    4. create contact section :white_check_mark:
 3. create items page
     1. setup FakeStore API to get items to sell
     2. create different categories for different items
