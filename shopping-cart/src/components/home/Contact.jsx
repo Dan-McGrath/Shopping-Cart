@@ -4,7 +4,7 @@ const Contact = () => {
       <form action="">
         <div className="name">
           <label htmlFor="name">Name: </label>
-          <input type="" id="name" name="name" placeholder="John Doe" />
+          <input id="name" name="name" placeholder="John Doe" />
         </div>
         <div className="email">
           <label htmlFor="email">Email: </label>
