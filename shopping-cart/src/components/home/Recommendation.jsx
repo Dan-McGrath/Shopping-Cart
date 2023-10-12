@@ -7,7 +7,7 @@ const Recommendation = () => {
   const [productArray, setProductArray] = useState([]);
   const settings = {
     infiniteLoop: true,
-    autoPlay: true,
+    autoPlay: false,
     stopOnHover: true,
     swipeable: true,
     showThumbs: false,
@@ -15,7 +15,10 @@ const Recommendation = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products?limit=7");
+      const response = await fetch(
+        "https://fakestoreapi.com/products?limit=7",
+        { mode: "cors" },
+      );
       const data = await response.json();
       setProductArray(data);
     };
