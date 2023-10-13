@@ -7,7 +7,7 @@
 
     img {
         max-width: 100px;
-        height: 100px;
+        max-height: 100px;
         margin: 0 auto;
     }
 
@@ -15,10 +15,15 @@
         display: flex;
         flex-direction: column;
         margin: 1em auto;
-        max-width: 250px;
+
         
         p {
             margin: 0.3em;
         }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
     }
 }
