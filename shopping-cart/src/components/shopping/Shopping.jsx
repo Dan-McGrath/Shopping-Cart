@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Header from "../header/Header";
+import Categories from "./Categories";
 
 const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   return (
@@ -11,6 +12,7 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
         navIsOpen={navIsOpen}
       />
       <h1>Shopping</h1>
+      <Categories />
     </>
   );
 };
