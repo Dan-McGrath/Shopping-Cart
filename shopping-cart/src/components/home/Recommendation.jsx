@@ -14,9 +14,9 @@ const Recommendation = () => {
     accessibility: true,
     adaptiveHeight: true,
     arrows: true,
-    fade: true,
     pauseOnFocus: true,
     pauseOnHover: true,
+    className: "item",
   };
 
   useEffect(() => {
@@ -33,6 +33,7 @@ const Recommendation = () => {
 
   const products = productArray.map((ele) => (
     <Card
+      style={{ margin: "10em auto" }}
       key={ele.id}
       title={ele.title}
       price={ele.price}
@@ -47,7 +48,9 @@ const Recommendation = () => {
       <section className="recommendations">
         <h2>Recommendations</h2>
         <div className="wrapper">
-          <Slider {...settings}>{products}</Slider>
+          <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
+            {products}
+          </Slider>
         </div>
       </section>
     </>
