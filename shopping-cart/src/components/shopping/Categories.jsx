@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Category from "./Category";
 
-const Categories = () => {
-  const [categories, setCategories] = useState([]);
+const Categories = ({ clickHandler }) => {
+  const [categories, setCategories] = useState([""]);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -11,13 +12,14 @@ const Categories = () => {
         { mode: "cors" },
       );
       const data = await response.json();
+      data.unshift("all");
       setCategories(data);
     };
     fetchCategories();
   }, [categories]);
 
   const categoriesArray = categories.map((ele) => (
-    <Category key={ele} name={ele} />
+    <Category key={ele} name={ele} clickHandler={clickHandler} />
   ));
 
   return (
@@ -48,6 +50,10 @@ const Categories = () => {
       </nav>
     </>
   );
+};
+
+Categories.propTypes = {
+  clickHandler: PropTypes.func,
 };
 
 export default Categories;
