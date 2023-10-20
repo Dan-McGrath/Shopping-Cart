@@ -6,7 +6,7 @@ import Card from "../Card";
 import Slider from "react-slick";
 
 const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
-  const [activeCategory, setAvtiveCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
   //electronics/jewlery/mens clothing/womens clothing
   const [electronics, setElectronics] = useState([]);
   const [jewelery, setJewlery] = useState([]);
@@ -29,7 +29,7 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
 
   useEffect(() => {
     const getCategoryItems = async () => {
-      if (activeCategory === "") {
+      if (activeCategory === "All") {
         //get electronics
         let responseElectronic = await fetch(
           "https://fakestoreapi.com/products/category/electronics?limit=7",
@@ -61,28 +61,28 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
         );
         let dataWomensClothing = await responseWomensClothing.json();
         setWomensClothing(dataWomensClothing);
-      } else if (activeCategory === "electronics") {
+      } else if (activeCategory === "Electronics") {
         let responseElectronic = await fetch(
           "https://fakestoreapi.com/products/category/electronics",
           { mode: "cors" },
         );
         let dataElectronic = await responseElectronic.json();
         setElectronics(dataElectronic);
-      } else if (activeCategory === "jewelery") {
+      } else if (activeCategory === "Jewelery") {
         let responseJewlery = await fetch(
           "https://fakestoreapi.com/products/category/jewelery",
           { mode: "cors" },
         );
         let dataJewlery = await responseJewlery.json();
         setJewlery(dataJewlery);
-      } else if (activeCategory === "mens") {
+      } else if (activeCategory === "Men's clothing") {
         let responseMensClothing = await fetch(
           "https://fakestoreapi.com/products/category/men's%20clothing",
           { mode: "cors" },
         );
         let dataMensClothing = await responseMensClothing.json();
         setMensClothing(dataMensClothing);
-      } else if (activeCategory === "womens") {
+      } else if (activeCategory === "Women's clothing") {
         let responseWomensClothing = await fetch(
           "https://fakestoreapi.com/products/category/women's%20clothing",
           { mode: "cors" },
@@ -140,30 +140,97 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
       image={ele.image}
     />
   ));
-  return (
-    <>
-      <Header
-        isMobile={isMobile}
-        navHandler={navHandler}
-        clickLinkHandle={clickLinkHandler}
-        navIsOpen={navIsOpen}
-      />
-      <h1>Shopping</h1>
-      <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
-        {electronicsArray}
-      </Slider>
-      <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
-        {jeweleryArray}
-      </Slider>
-      <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
-        {mensArray}
-      </Slider>
-      <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
-        {womensArray}
-      </Slider>
-      <Categories />
-    </>
-  );
+
+  const changeCategoryHandler = (e) => {
+    setActiveCategory(e.target.id);
+  };
+
+  if (activeCategory === "All") {
+    return (
+      <>
+        <Header
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandle={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+        <h1>Shopping</h1>
+        <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
+          {electronicsArray}
+        </Slider>
+        <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
+          {jeweleryArray}
+        </Slider>
+        <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
+          {mensArray}
+        </Slider>
+        <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
+          {womensArray}
+        </Slider>
+        <Categories clickHandler={changeCategoryHandler} />
+      </>
+    );
+  } else if (activeCategory === "Electronics") {
+    return (
+      <>
+        <Header
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandle={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+        <h1>Shopping</h1>
+        <h2>Electronics</h2>
+        <div className="products">{electronicsArray}</div>
+        <Categories clickHandler={changeCategoryHandler} />
+      </>
+    );
+  } else if (activeCategory === "Jewelery") {
+    return (
+      <>
+        <Header
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandle={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+        <h1>Shopping</h1>
+        <h2>Electronics</h2>
+        <div className="products">{jeweleryArray}</div>
+        <Categories clickHandler={changeCategoryHandler} />
+      </>
+    );
+  } else if (activeCategory === "Men's clothing") {
+    return (
+      <>
+        <Header
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandle={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+        <h1>Shopping</h1>
+        <h2>Electronics</h2>
+        <div className="products">{mensArray}</div>
+        <Categories clickHandler={changeCategoryHandler} />
+      </>
+    );
+  } else if (activeCategory === "Women's clothing") {
+    return (
+      <>
+        <Header
+          isMobile={isMobile}
+          navHandler={navHandler}
+          clickLinkHandle={clickLinkHandler}
+          navIsOpen={navIsOpen}
+        />
+        <h1>Shopping</h1>
+        <h2>Electronics</h2>
+        <div className="products">{womensArray}</div>
+        <Categories clickHandler={changeCategoryHandler} />
+      </>
+    );
+  }
 };
 
 Shopping.propTypes = {
