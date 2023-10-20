@@ -22,8 +22,29 @@ const Categories = () => {
 
   return (
     <>
-      <nav>
-        <ul>{categoriesArray}</ul>
+      <nav
+        style={{
+          margin: "1em 0",
+          padding: "1em",
+          border: "1px solid black",
+          width: "150px",
+          cursor: "pointer",
+          height: "80vh",
+          display: "flex",
+          position: "absolute",
+          top: "15%",
+        }}
+      >
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            height: "100%",
+          }}
+        >
+          {categoriesArray}
+        </ul>
       </nav>
     </>
   );
