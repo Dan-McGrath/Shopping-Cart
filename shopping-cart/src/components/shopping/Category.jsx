@@ -6,7 +6,7 @@ const Category = ({ name, clickHandler }) => {
     <li
       className="category"
       id={name}
-      style={{ margin: "1em auto" }}
+      style={{ margin: "1em auto", cursor: "pointer" }}
       onClick={clickHandler}
     >
       {name}

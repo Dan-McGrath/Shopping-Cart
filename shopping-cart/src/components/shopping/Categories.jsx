@@ -30,7 +30,6 @@ const Categories = ({ clickHandler }) => {
           padding: "1em",
           border: "1px solid black",
           width: "150px",
-          cursor: "pointer",
           height: "80vh",
           display: "flex",
           position: "absolute",
