@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./header/Header";
-import Recommendation from "./home/Recommendation";
 
 const App = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);

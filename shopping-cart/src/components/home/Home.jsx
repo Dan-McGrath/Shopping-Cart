@@ -1,26 +1,12 @@
 import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
 import Hero from "./Hero";
-import Shopping from "../shopping/Shopping";
-import Cart from "../cart/Cart";
-import Contact from "./Contact";
 import Recommendation from "./Recommendation";
-import ErrorPage from "../ErrorPage";
 
 const Home = () => {
-  const { name } = useParams();
   return (
     <>
-      {name === "shopping" ? (
-        <Shopping />
-      ) : name === "cart" ? (
-        <Cart />
-      ) : (
-        <>
-          <Hero />
-          <Recommendation />
-        </>
-      )}
+      <Hero />
+      <Recommendation />
     </>
   );
 };
