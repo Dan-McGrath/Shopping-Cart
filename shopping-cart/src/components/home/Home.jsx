@@ -16,7 +16,10 @@ const Home = () => {
       ) : name === "cart" ? (
         <Cart />
       ) : (
-        <ErrorPage />
+        <>
+          <Hero />
+          <Recommendation />
+        </>
       )}
     </>
   );

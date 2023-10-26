@@ -13,6 +13,10 @@ const Router = () => {
       errorElement: <ErrorPage />,
       children: [
         {
+          index: true,
+          element: <Home />,
+        },
+        {
           path: "/:name",
           element: <Home />,
         },
