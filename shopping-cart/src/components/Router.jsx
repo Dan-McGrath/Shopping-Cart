@@ -4,7 +4,7 @@ import ErrorPage from "./ErrorPage.jsx";
 import App from "./App.jsx";
 import Cart from "./cart/Cart.jsx";
 import Shopping from "./shopping/Shopping.jsx";
-
+import Card from "./Card.jsx";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -19,6 +19,16 @@ const Router = () => {
         {
           path: "shopping",
           element: <Shopping />,
+          children: [
+            {
+              index: true,
+              element: <Shopping />,
+            },
+            {
+              path: "product/:productId",
+              element: <Card />,
+            },
+          ],
         },
         {
           path: "cart",
