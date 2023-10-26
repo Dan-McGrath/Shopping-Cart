@@ -1,11 +1,10 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import Header from "../header/Header";
 import Categories from "./Categories";
 import Card from "../Card";
 import Slider from "react-slick";
 
-const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
+const Shopping = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   //electronics/jewlery/mens clothing/womens clothing
   const [electronics, setElectronics] = useState([]);
@@ -148,12 +147,6 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   if (activeCategory === "All") {
     return (
       <>
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
         <h1>Shopping</h1>
         <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
           {electronicsArray}
@@ -173,12 +166,6 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   } else if (activeCategory === "Electronics") {
     return (
       <>
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
         <h1>Shopping</h1>
         <h2>Electronics</h2>
         <div className="products">{electronicsArray}</div>
@@ -188,12 +175,6 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   } else if (activeCategory === "Jewelery") {
     return (
       <>
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
         <h1>Shopping</h1>
         <h2>Electronics</h2>
         <div className="products">{jeweleryArray}</div>
@@ -203,12 +184,6 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   } else if (activeCategory === "Men's clothing") {
     return (
       <>
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
         <h1>Shopping</h1>
         <h2>Electronics</h2>
         <div className="products">{mensArray}</div>
@@ -218,12 +193,6 @@ const Shopping = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   } else if (activeCategory === "Women's clothing") {
     return (
       <>
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
         <h1>Shopping</h1>
         <h2>Electronics</h2>
         <div className="products">{womensArray}</div>

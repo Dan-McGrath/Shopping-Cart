@@ -1,15 +1,8 @@
 import PropTypes from "prop-types";
-import Header from "../header/Header";
 
-const Cart = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
+const Cart = () => {
   return (
     <>
-      <Header
-        isMobile={isMobile}
-        navHandler={navHandler}
-        clickLinkHandle={clickLinkHandler}
-        navIsOpen={navIsOpen}
-      />
       <h1>Cart</h1>
     </>
   );
