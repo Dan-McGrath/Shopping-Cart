@@ -35,6 +35,7 @@ const Recommendation = () => {
     <Card
       style={{ margin: "10em auto" }}
       key={ele.id}
+      id={ele.id}
       title={ele.title}
       price={ele.price}
       category={ele.category}
