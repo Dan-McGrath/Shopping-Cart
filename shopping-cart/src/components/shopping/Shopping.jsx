@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Categories from "./Categories";
 import Card from "../Card";
 import Slider from "react-slick";
+import { Outlet } from "react-router-dom";
 
 const Shopping = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -102,6 +103,7 @@ const Shopping = () => {
       category={ele.category}
       description={ele.description}
       image={ele.image}
+      id={ele.id}
     />
   ));
 
@@ -114,6 +116,7 @@ const Shopping = () => {
       category={ele.category}
       description={ele.description}
       image={ele.image}
+      id={ele.id}
     />
   ));
 
@@ -126,6 +129,7 @@ const Shopping = () => {
       category={ele.category}
       description={ele.description}
       image={ele.image}
+      id={ele.id}
     />
   ));
   let womensArray = womensClothing.map((ele) => (
@@ -137,6 +141,7 @@ const Shopping = () => {
       category={ele.category}
       description={ele.description}
       image={ele.image}
+      id={ele.id}
     />
   ));
 
@@ -148,6 +153,7 @@ const Shopping = () => {
     return (
       <>
         <h1>Shopping</h1>
+        <Outlet />
         <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
           {electronicsArray}
         </Slider>
