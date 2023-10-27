@@ -12,10 +12,7 @@ const Home = () => {
 };
 
 Home.propTypes = {
-  isMobile: PropTypes.bool,
-  navHandler: PropTypes.func,
-  clickLinkHandler: PropTypes.func,
-  navIsOpen: PropTypes.bool,
+  games: PropTypes.array,
 };
 
 export default Home;
