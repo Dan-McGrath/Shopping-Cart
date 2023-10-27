@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import Card from "./Card";
+import Game from "./Game";
 
-describe("Cart component", () => {
-  it("renders card title", () => {
+describe("Game component", () => {
+  it("renders Game title", () => {
     render(
-      <Card
+      <Game
         title="foo"
         price="1.00"
         category="foo"
@@ -14,9 +14,9 @@ describe("Cart component", () => {
     );
     expect(screen.getByRole("heading")).toBeInTheDocument();
   });
-  it("renders card image", () => {
+  it("renders Game image", () => {
     render(
-      <Card
+      <Game
         title="foo"
         price="1.00"
         category="foo"
@@ -26,9 +26,9 @@ describe("Cart component", () => {
     );
     expect(screen.getByAltText("foo")).toBeInTheDocument();
   });
-  it("renders card description", () => {
+  it("renders Game description", () => {
     render(
-      <Card
+      <Game
         title="foo"
         price="1.00"
         category="foo"
@@ -38,9 +38,9 @@ describe("Cart component", () => {
     );
     expect(screen.getByText("bar")).toBeInTheDocument();
   });
-  it("renders card category", () => {
+  it("renders Game category", () => {
     render(
-      <Card
+      <Game
         title="foo"
         price="1.00"
         category="foo"
@@ -50,9 +50,9 @@ describe("Cart component", () => {
     );
     expect(screen.getByText("foo")).toBeInTheDocument();
   });
-  it("renders card price", () => {
+  it("renders Game price", () => {
     render(
-      <Card
+      <Game
         title="foo"
         price="1.00"
         category="foo"
