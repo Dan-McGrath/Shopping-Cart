@@ -1,10 +1,10 @@
 import Slider from "react-slick";
 import { useState, useEffect } from "react";
-import Card from "../Card";
+import PropTypes from "prop-types";
+import Game from "../Game";
 
 const Recommendation = () => {
-  const [productArray, setProductArray] = useState([]);
-
+  const [games, setGames] = useState([]);
   const settings = {
     dots: true,
     infinite: true,
@@ -20,27 +20,31 @@ const Recommendation = () => {
   };
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchGames = async () => {
       const response = await fetch(
-        "https://fakestoreapi.com/products?limit=7",
-        { mode: "cors" },
+        "https://api.rawg.io/api/games?key=ee5bf1341db9436c98116082abfd714f",
+        {
+          mode: "cors",
+        },
       );
       const data = await response.json();
-      setProductArray(data);
+      setGames(data.results);
     };
-    fetchProducts();
+    fetchGames();
   }, []);
 
-  const products = productArray.map((ele) => (
-    <Card
+  console.log(games);
+
+  const gamesArray = games.map((ele) => (
+    <Game
       style={{ margin: "10em auto" }}
       key={ele.id}
-      id={ele.id}
-      title={ele.title}
-      price={ele.price}
-      category={ele.category}
+      slug={ele.slug}
+      title={ele.name}
+      rating={ele.rating}
+      genre={ele.tags[0].name}
       description={ele.description}
-      image={ele.image}
+      image={ele.background_image}
     />
   ));
 
@@ -50,12 +54,16 @@ const Recommendation = () => {
         <h2>Recommendations</h2>
         <div className="wrapper">
           <Slider {...settings} style={{ margin: "1em auto", padding: "1em" }}>
-            {products}
+            {gamesArray}
           </Slider>
         </div>
       </section>
     </>
   );
+};
+
+Recommendation.propTypes = {
+  games: PropTypes.array,
 };
 
 export default Recommendation;
