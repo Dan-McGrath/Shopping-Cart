@@ -3,8 +3,8 @@ import Home from "./home/Home.jsx";
 import ErrorPage from "./ErrorPage.jsx";
 import App from "./App.jsx";
 import Cart from "./cart/Cart.jsx";
-import Shopping from "./shopping/Shopping.jsx";
-import Card from "./Card.jsx";
+import Games from "./shopping/Games.jsx";
+import Game from "./Game.jsx";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -17,16 +17,12 @@ const Router = () => {
           element: <Home />,
         },
         {
-          path: "shopping",
-          element: <Shopping />,
+          path: "games",
+          element: <Games />,
           children: [
             {
-              index: true,
-              element: <Shopping />,
-            },
-            {
-              path: "product/:productId",
-              element: <Card />,
+              path: "games/:gameId",
+              element: <Game />,
             },
           ],
         },
