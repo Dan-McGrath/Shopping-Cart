@@ -3,23 +3,22 @@ import PropTypes from "prop-types";
 import Category from "./Category";
 
 const Categories = ({ clickHandler }) => {
-  const [categories, setCategories] = useState([""]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await fetch(
-        "https://fakestoreapi.com/products/categories",
+        "https://api.rawg.io/api/genres?key=ee5bf1341db9436c98116082abfd714f",
         { mode: "cors" },
       );
       const data = await response.json();
-      data.unshift("all");
-      setCategories(data);
+      setCategories(data.results);
     };
     fetchCategories();
   }, [categories]);
 
   const categoriesArray = categories.map((ele) => (
-    <Category key={ele} name={ele} clickHandler={clickHandler} />
+    <Category key={ele.id} name={ele.name} clickHandler={clickHandler} />
   ));
 
   return (
