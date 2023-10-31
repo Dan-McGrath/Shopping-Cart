@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./home/Home.jsx";
 import ErrorPage from "./ErrorPage.jsx";
-import App from "./App.jsx";
+import App, { loader as appLoader } from "./App.jsx";
 import Cart from "./cart/Cart.jsx";
-import Games from "./shopping/Games.jsx";
+import Games, { loader as gameLoader } from "./shopping/Games.jsx";
 import Game from "./Game.jsx";
 const Router = () => {
   const router = createBrowserRouter([
@@ -11,6 +11,7 @@ const Router = () => {
       path: "/",
       element: <App />,
       errorElement: <ErrorPage />,
+      loader: appLoader,
       children: [
         {
           index: true,
@@ -19,6 +20,7 @@ const Router = () => {
         {
           path: "games",
           element: <Games />,
+          loader: gameLoader,
           children: [
             {
               path: "games/:gameId",
