@@ -1,29 +1,8 @@
-.item {
-    max-width: 500px;
-    margin: 0 auto;
-    h3 {
-        margin: 1em;
-    }
-
+.games {
+    display: grid;
+    gap: 1em;
     img {
-        max-width: 100px;
-        max-height: 100px;
-        margin: 0 auto;
-    }
-
-    .info {
-        display: flex;
-        flex-direction: column;
-        margin: 1em auto;
-
-        
-        p {
-            margin: 0.3em;
-        }
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: center;
+        max-width: 200px;
+        max-height: 200px;
     }
 }
