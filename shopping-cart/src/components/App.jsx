@@ -1,8 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./header/Header";
+import { fetchGenres } from "../apiHelpers/games";
+
+export const loader = async () => {
+  const genres = await fetchGenres();
+  return { genres };
+};
 
 const App = () => {
+  const { genres } = useLoaderData();
   const [navIsOpen, setNavIsOpen] = useState(false);
   const [windowDimension, setWindowDimension] = useState(null);
 
@@ -28,6 +35,7 @@ const App = () => {
   const clickLinkHandler = () => {
     setNavIsOpen(false);
   };
+
   return (
     <>
       <Header
@@ -36,6 +44,13 @@ const App = () => {
         clickLinkHandle={clickLinkHandler}
         navIsOpen={navIsOpen}
       />
+      <div className="secondary-nav">
+        <ul>
+          {genres.map((genre) => (
+            <li key={genre.id}>{genre.name}</li>
+          ))}
+        </ul>
+      </div>
       <Outlet />
     </>
   );
