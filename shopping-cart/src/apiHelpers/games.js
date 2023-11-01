@@ -19,3 +19,14 @@ export const fetchGenres = async () => {
   const data = await response.json();
   return data.results;
 };
+
+export const fetchGame = async (id) => {
+  const response = await fetch(
+    `https://api.rawg.io/api/games/${id}?key=ee5bf1341db9436c98116082abfd714f`,
+    {
+      mode: "cors",
+    }
+  );
+  const data = await response.json();
+  return [data];
+};
