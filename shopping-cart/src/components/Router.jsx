@@ -3,8 +3,8 @@ import Home from "./home/Home.jsx";
 import ErrorPage from "./ErrorPage.jsx";
 import App, { loader as appLoader } from "./App.jsx";
 import Cart from "./cart/Cart.jsx";
-import Games, { loader as gameLoader } from "./shopping/Games.jsx";
-import Game from "./Game.jsx";
+import Games, { loader as gamesLoader } from "./shopping/Games.jsx";
+import Game, { loader as gameLoader } from "./Game.jsx";
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -20,11 +20,12 @@ const Router = () => {
         {
           path: "games",
           element: <Games />,
-          loader: gameLoader,
+          loader: gamesLoader,
           children: [
             {
-              path: "games/:gameId",
+              path: "game/:gameId",
               element: <Game />,
+              loader: gameLoader,
             },
           ],
         },
