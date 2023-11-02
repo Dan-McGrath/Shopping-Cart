@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchGame } from "../../helpers/api";
+import { addToCart } from "../../helpers/cart";
 
 export const loader = async ({ params }) => {
   const game = await fetchGame(params.gameId);
@@ -23,6 +24,18 @@ const Game = () => {
           <p>Rating: {game.rating}</p>
           <p>Released: {game.released}</p>
           <div className="tags">{tagsArray}</div>
+        </div>
+        <div className="add-to-cart">
+          <button
+            onClick={addToCart(
+              game.id,
+              game.name,
+              game.background_image,
+              game.price,
+            )}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </>
