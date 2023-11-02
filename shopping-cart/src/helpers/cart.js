@@ -1,7 +1,7 @@
 let currentCart = [];
 
-export const addToCart = (game) => {
-  currentCart.push(game);
+export const addToCart = (id, name, image, price) => {
+  currentCart.push({ id: id, name: name, image: image, price: price });
 };
 
 export const removeFromCart = (game) => {
