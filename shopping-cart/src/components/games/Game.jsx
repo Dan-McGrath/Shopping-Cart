@@ -2,10 +2,15 @@ import { useLoaderData } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchGame } from "../../helpers/api";
 import { addToCart } from "../../helpers/cart";
+import Button from "../Button";
 
 export const loader = async ({ params }) => {
   const game = await fetchGame(params.gameId);
   return { game };
+};
+
+const clickHandler = (game) => {
+  addToCart(game.id, game.name, game.background_image, game.price);
 };
 
 const Game = () => {
@@ -15,6 +20,7 @@ const Game = () => {
       <p>{tag.name}</p>
     </div>
   ));
+
   return (
     <>
       <div className="game">
@@ -26,16 +32,7 @@ const Game = () => {
           <div className="tags">{tagsArray}</div>
         </div>
         <div className="add-to-cart">
-          <button
-            onClick={addToCart(
-              game.id,
-              game.name,
-              game.background_image,
-              game.price,
-            )}
-          >
-            Add to Cart
-          </button>
+          <Button onClick={clickHandler(game)} text="Add to Cart"></Button>
         </div>
       </div>
     </>
