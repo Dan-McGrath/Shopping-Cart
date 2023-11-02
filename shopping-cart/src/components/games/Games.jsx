@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { fetchGames } from "../../helpers/api";
 
 export const loader = async () => {
@@ -8,7 +8,6 @@ export const loader = async () => {
 
 const Games = () => {
   const { games } = useLoaderData();
-  console.log(games);
   return (
     <>
       <h1>Games</h1>
