@@ -9,6 +9,7 @@ export const loader = async () => {
 
 const Cart = () => {
   const { currentCart } = useLoaderData();
+  console.log(currentCart);
   return (
     <>
       <h1>Cart</h1>
@@ -21,7 +22,7 @@ const Cart = () => {
               <li key={game.id}>
                 <h2>{game.name}</h2>
                 <img src={game.image} alt={game.name} />
-                <p>{game.price}</p>
+                <p>Price: {game.price}</p>
               </li>
             </>
           ))
