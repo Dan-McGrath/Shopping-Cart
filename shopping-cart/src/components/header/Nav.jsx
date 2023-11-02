@@ -9,7 +9,7 @@ const Nav = ({ clickLinkHandler }) => {
           <Link to="/">Home</Link>
         </li>
         <li onClick={clickLinkHandler}>
-          <Link to="/games">Shopping</Link>
+          <Link to="/games">Games</Link>
         </li>
         <li onClick={clickLinkHandler}>
           <Link to="/cart">Cart</Link>
