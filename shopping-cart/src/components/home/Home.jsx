@@ -1,18 +1,14 @@
-import PropTypes from "prop-types";
-import Hero from "./Hero";
-import Recommendation from "./Recommendation";
-
 const Home = () => {
   return (
-    <>
-      <Hero />
-      <Recommendation />
-    </>
+    <section className="hero">
+      <h1>Welcome To Danify</h1>
+      <p>Search for games of all types for purchase!</p>
+      <p>
+        This is not a real site. Only a demo for what a real game shop would
+        look like
+      </p>
+    </section>
   );
-};
-
-Home.propTypes = {
-  games: PropTypes.array,
 };
 
 export default Home;
