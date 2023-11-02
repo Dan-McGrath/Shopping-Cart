@@ -9,7 +9,6 @@ export const loader = async ({ params }) => {
 
 const Game = () => {
   const { game } = useLoaderData();
-  console.log(game);
   const tagsArray = game.tags.map((tag) => (
     <div className="tag" key={tag.id}>
       <p>{tag.name}</p>
