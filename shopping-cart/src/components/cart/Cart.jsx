@@ -21,6 +21,7 @@ const Cart = () => {
               <li key={game.id}>
                 <h2>{game.name}</h2>
                 <img src={game.image} alt={game.name} />
+                <p>{game.price}</p>
               </li>
             </>
           ))
