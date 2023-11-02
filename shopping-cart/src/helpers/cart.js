@@ -1,6 +1,6 @@
-let currentCart = [];
+const currentCart = [];
 
-export const addToCart = (id, name, image, price) => {
+export const addToCart = (id, name, image, price = "$59.99") => {
   currentCart.push({ id: id, name: name, image: image, price: price });
 };
 
