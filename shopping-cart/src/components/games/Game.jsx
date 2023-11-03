@@ -1,21 +1,18 @@
-import { useLoaderData, Form } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchGame } from "../../helpers/api";
-import { addToCart } from "../../helpers/cart";
+import { CartContext } from "../App";
+import { useContext } from "react";
 
 export const loader = async ({ params }) => {
   const game = await fetchGame(params.gameId);
   return { game };
 };
 
-export const action = async ({ params }) => {
-  const newGame = await fetchGame(params.gameId);
-  addToCart(newGame);
-  return { newGame };
-};
-
 const Game = () => {
+  const { addToCart, products } = useContext(CartContext);
   const { game } = useLoaderData();
+  const product = products.find((ele) => ele.id === game.id);
   const tagsArray = game.tags.map((tag) => (
     <div className="tag" key={tag.id}>
       <p>{tag.name}</p>
@@ -33,9 +30,9 @@ const Game = () => {
           <div className="tags">{tagsArray}</div>
         </div>
         <div className="add-to-cart">
-          <Form method="post">
-            <button type="submit">Add to Cart</button>
-          </Form>
+          <button type="button" onClick={() => addToCart(product)}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </>
