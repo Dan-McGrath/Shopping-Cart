@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
-import { getCurrentCart } from "../../helpers/cart.js";
-import { useLoaderData } from "react-router-dom";
+import {
+  addToCart,
+  getCurrentCart,
+  removeFromCart,
+} from "../../helpers/cart.js";
+import { useLoaderData, Form, redirect } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../App.jsx";
 
 export const loader = async () => {
   const currentCart = await getCurrentCart();
@@ -8,21 +14,21 @@ export const loader = async () => {
 };
 
 const Cart = () => {
-  const { currentCart } = useLoaderData();
-  console.log(currentCart);
+  const { cartItems } = useContext(CartContext);
+
   return (
     <>
       <h1>Cart</h1>
       <ul>
-        {currentCart.length === 0 ? (
+        {cartItems.length === 0 ? (
           <p>No games in cart</p>
         ) : (
-          currentCart.map((game) => (
+          cartItems.map((game) => (
             <>
               <li key={game.id}>
                 <h2>{game.name}</h2>
-                <img src={game.image} alt={game.name} />
-                <p>Price: {game.price}</p>
+                <img src={game.background_image} alt={game.name} />
+                <p>Price: $59.99</p>
               </li>
             </>
           ))
