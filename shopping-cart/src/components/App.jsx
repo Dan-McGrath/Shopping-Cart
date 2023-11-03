@@ -29,8 +29,8 @@ const App = () => {
 
   const removeFromCart = (game) => {
     let index = cartItems.indexOf(game);
-    let newCart = cartItems.splice(index, 1);
-    setCartItems(newCart);
+    cartItems.splice(index, 1);
+    setCartItems([...cartItems]);
   };
 
   useEffect(() => {
