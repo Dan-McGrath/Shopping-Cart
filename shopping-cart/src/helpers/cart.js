@@ -1,7 +1,12 @@
 const currentCart = [];
 
-export const addToCart = (id, name, image, price = "$59.99") => {
-  currentCart.push({ id: id, name: name, image: image, price: price });
+export const addToCart = (game) => {
+  currentCart.push({
+    id: game.id,
+    name: game.name,
+    image: game.background_image,
+    price: "59.99",
+  });
 };
 
 export const removeFromCart = (game) => {
