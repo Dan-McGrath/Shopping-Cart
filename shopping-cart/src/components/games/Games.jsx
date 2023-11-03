@@ -1,18 +1,14 @@
-import { useLoaderData, Link } from "react-router-dom";
-import { fetchGames } from "../../helpers/api";
-
-export const loader = async () => {
-  const games = await fetchGames();
-  return { games };
-};
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
 const Games = () => {
-  const { games } = useLoaderData();
+  const { products } = useContext(CartContext);
   return (
     <>
       <h1>Games</h1>
       <div className="games">
-        {games.map((game) => (
+        {products.map((game) => (
           <>
             <div className="game" key={game.id}>
               <Link to={`game/${game.id}`}>
