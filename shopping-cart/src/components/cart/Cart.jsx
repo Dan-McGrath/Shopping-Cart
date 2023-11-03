@@ -1,17 +1,6 @@
 import PropTypes from "prop-types";
-import {
-  addToCart,
-  getCurrentCart,
-  removeFromCart,
-} from "../../helpers/cart.js";
-import { useLoaderData, Form, redirect } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../App.jsx";
-
-export const loader = async () => {
-  const currentCart = await getCurrentCart();
-  return { currentCart };
-};
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useContext(CartContext);
