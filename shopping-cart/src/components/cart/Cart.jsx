@@ -14,7 +14,7 @@ export const loader = async () => {
 };
 
 const Cart = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, removeFromCart } = useContext(CartContext);
 
   return (
     <>
@@ -30,6 +30,13 @@ const Cart = () => {
                 <img src={game.background_image} alt={game.name} />
                 <p>Price: $59.99</p>
               </li>
+              <button
+                className="remove-game"
+                type="button"
+                onClick={() => removeFromCart(game)}
+              >
+                Remove from Cart
+              </button>
             </>
           ))
         )}
