@@ -1,12 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "../App";
+import App, { loader as appLoader } from "../App";
 import ErrorPage from "./ErrorPage";
-import Game, {
-  loader as gameLoader,
-  action as gameAction,
-} from "../games/Game";
+import Game, { loader as gameLoader } from "../games/Game";
 import Cart, { loader as cartLoader } from "../cart/Cart";
-import Games, { loader as gamesLoader } from "../games/Games";
+import Games from "../games/Games";
 import Home from "../home/Home";
 
 const Router = () => {
@@ -15,6 +12,7 @@ const Router = () => {
       path: "/",
       element: <App />,
       errorElement: <ErrorPage />,
+      loader: appLoader,
       children: [
         {
           index: true,
@@ -23,13 +21,11 @@ const Router = () => {
         {
           path: "/games",
           element: <Games />,
-          loader: gamesLoader,
         },
         {
           path: "games/game/:gameId",
           element: <Game />,
           loader: gameLoader,
-          action: gameAction,
         },
 
         {
