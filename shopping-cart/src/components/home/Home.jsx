@@ -3,10 +3,11 @@ const Home = () => {
     maxWidth: "500px",
     textAlign: "center",
     margin: "3rem auto",
-    background: "grey",
+    background: "#262626",
     padding: "2rem",
-    border: "1px solid grey",
+    border: "1px solid #553B8C",
     borderRadius: "10px",
+    color: "#D923BA",
   };
 
   return (
