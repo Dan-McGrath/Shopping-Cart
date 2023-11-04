@@ -23,31 +23,55 @@ const Game = () => {
   const gameStyles = {
     display: "grid",
     gap: "1em",
+    background: "#262626",
+    margin: "1rem",
+    padding: "1rem",
+    paddingBottom: "3rem",
   };
 
   const gameImageStyles = {
-    maxWidth: "300px",
-    maxHeight: "500px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
   };
 
   return (
     <>
       <div className="game" style={gameStyles}>
-        <h2>{game.name}</h2>
-        <img
-          src={game.background_image}
-          alt={game.title}
-          style={gameImageStyles}
-        />
-        <div className="info">
-          <p>Rating: {game.rating}</p>
-          <p>Released: {game.released}</p>
-          <div className="tags">{tagsArray}</div>
-        </div>
-        <div className="add-to-cart">
-          <button type="button" onClick={() => addToCart(product)}>
-            Add to Cart
-          </button>
+        <h2 style={{ textAlign: "center", fontSize: "24px" }}>{game.name}</h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            maxHeight: "500px",
+            maxWidth: "1500px",
+            margin: "0 auto",
+            gap: "1rem",
+          }}
+        >
+          <div className="img" style={gameImageStyles}>
+            <img
+              src={game.background_image}
+              alt={game.title}
+              style={{
+                width: "100%",
+                background: "no-repeat cover center",
+                height: "auto",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="info">
+            <p>Rating: {game.rating}</p>
+            <p>Released: {game.released}</p>
+            <div className="tags">{tagsArray}</div>
+            <div className="add-to-cart">
+              <button type="button" onClick={() => addToCart(product)}>
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>
