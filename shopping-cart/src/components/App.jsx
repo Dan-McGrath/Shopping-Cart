@@ -36,8 +36,6 @@ const App = () => {
     getTotal();
   }, [cartItems]);
 
-  console.log(total);
-
   const addToCart = (game) => {
     //set defult price
     game.price = "59.99";
