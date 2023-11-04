@@ -8,6 +8,7 @@ export const CartContext = createContext({
   cartItems: [],
   addToCart: () => {},
   removeFromCart: () => {},
+  total: null,
 });
 
 export const loader = async () => {
@@ -19,11 +20,27 @@ const App = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const [windowDimension, setWindowDimension] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
   const { games } = useLoaderData();
 
   const products = games;
 
+  useEffect(() => {
+    const getTotal = () => {
+      let newTotal = 0;
+      cartItems.forEach((game) => {
+        newTotal += Number(game.price);
+      });
+      setTotal(newTotal);
+    };
+    getTotal();
+  }, [cartItems]);
+
+  console.log(total);
+
   const addToCart = (game) => {
+    //set defult price
+    game.price = "59.99";
     setCartItems([...cartItems, game]);
   };
 
@@ -59,7 +76,7 @@ const App = () => {
   return (
     <>
       <CartContext.Provider
-        value={{ cartItems, products, addToCart, removeFromCart }}
+        value={{ cartItems, products, total, addToCart, removeFromCart }}
       >
         <Header
           isMobile={isMobile}
