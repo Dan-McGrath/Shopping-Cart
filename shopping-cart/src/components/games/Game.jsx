@@ -13,17 +13,32 @@ const Game = () => {
   const { addToCart, products } = useContext(CartContext);
   const { game } = useLoaderData();
   const product = products.find((ele) => ele.id === game.id);
+
   const tagsArray = game.tags.map((tag) => (
     <div className="tag" key={tag.id}>
       <p>{tag.name}</p>
     </div>
   ));
 
+  const gameStyles = {
+    display: "grid",
+    gap: "1em",
+  };
+
+  const gameImageStyles = {
+    maxWidth: "300px",
+    maxHeight: "500px",
+  };
+
   return (
     <>
-      <div className="game">
+      <div className="game" style={gameStyles}>
         <h2>{game.name}</h2>
-        <img src={game.background_image} alt={game.title} />
+        <img
+          src={game.background_image}
+          alt={game.title}
+          style={gameImageStyles}
+        />
         <div className="info">
           <p>Rating: {game.rating}</p>
           <p>Released: {game.released}</p>
