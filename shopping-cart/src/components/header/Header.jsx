@@ -2,6 +2,12 @@ import PropTypes from "prop-types";
 import Nav from "./Nav";
 
 const Header = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
+  const headerStyles = {
+    display: "flex",
+    justifyContent: "space-between",
+    margin: "1rem 0",
+  };
+
   return isMobile ? (
     navIsOpen ? (
       <header className="nav-mobile">
@@ -27,7 +33,7 @@ const Header = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
       </header>
     )
   ) : (
-    <header>
+    <header style={headerStyles}>
       <img src="" alt="logo" />
       <Nav />
     </header>
