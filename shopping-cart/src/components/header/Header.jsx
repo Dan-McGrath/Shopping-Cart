@@ -5,7 +5,6 @@ const Header = ({ isMobile, navHandler, clickLinkHandler, navIsOpen }) => {
   const headerStyles = {
     display: "flex",
     justifyContent: "space-between",
-    margin: "1rem 0",
   };
 
   return isMobile ? (
