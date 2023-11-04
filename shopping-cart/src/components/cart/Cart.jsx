@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../App.jsx";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, total } = useContext(CartContext);
 
   return (
     <>
@@ -17,7 +17,7 @@ const Cart = () => {
               <li key={game.id}>
                 <h2>{game.name}</h2>
                 <img src={game.background_image} alt={game.name} />
-                <p>Price: $59.99</p>
+                <p>Price: ${game.price}</p>
               </li>
               <button
                 className="remove-game"
@@ -30,6 +30,7 @@ const Cart = () => {
           ))
         )}
       </ul>
+      <div className="total">Total: ${total}</div>
     </>
   );
 };
