@@ -6,16 +6,22 @@ import { CartContext } from "../App";
 const Nav = ({ clickLinkHandler }) => {
   const { cartItems } = useContext(CartContext);
 
-  const navStyles = {
+  const ulStyles = {
     display: "flex",
     justifyContent: "space-evenly",
+    flexDirection: "column",
     gap: "1rem",
     margin: "1rem",
   };
 
+  const navStyles = {
+    background: "grey",
+    fontSize: "20px",
+  };
+
   return (
-    <nav>
-      <ul style={navStyles}>
+    <nav style={navStyles}>
+      <ul style={ulStyles}>
         <li onClick={clickLinkHandler}>
           <Link to="/">Home</Link>
         </li>
