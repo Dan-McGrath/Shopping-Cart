@@ -15,8 +15,9 @@ const Nav = ({ clickLinkHandler }) => {
   };
 
   const navStyles = {
-    background: "grey",
+    background: "#262626",
     fontSize: "20px",
+    color: "#0BB3D9",
   };
 
   return (
