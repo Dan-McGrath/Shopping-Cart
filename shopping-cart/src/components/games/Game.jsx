@@ -44,6 +44,7 @@ const Game = () => {
     margin: "1rem",
     padding: "1rem",
     paddingBottom: "3rem",
+    borderRadius: "10px",
   };
 
   const gameImageStyles = {
@@ -53,10 +54,21 @@ const Game = () => {
     overflow: "hidden",
   };
 
+  const buttonStyles = {
+    width: "100%",
+    padding: "0.75rem",
+    borderRadius: "20px",
+    border: "none",
+    background: "#553B8C",
+    margin: "1rem",
+  };
+
   return (
     <>
       <div className="game" style={gameStyles}>
-        <h2 style={{ textAlign: "center", fontSize: "24px" }}>{game.name}</h2>
+        <h2 style={{ textAlign: "center", fontSize: "24px", color: "#D923BA" }}>
+          {game.name}
+        </h2>
         <div
           style={{
             display: "grid",
@@ -79,14 +91,18 @@ const Game = () => {
               }}
             />
           </div>
-          <div className="info">
+          <div className="info" style={{ color: "#04588C" }}>
             <p>Rating: {game.rating}</p>
             <p>Released: {game.released}</p>
             <div className="description">
               {formatDescription(game.description)}
             </div>
             <div className="add-to-cart">
-              <button type="button" onClick={() => addToCart(product)}>
+              <button
+                type="button"
+                onClick={() => addToCart(product)}
+                style={buttonStyles}
+              >
                 Add to Cart
               </button>
             </div>
