@@ -14,11 +14,28 @@ const Game = () => {
   const { game } = useLoaderData();
   const product = products.find((ele) => ele.id === game.id);
 
-  const tagsArray = game.tags.map((tag) => (
-    <div className="tag" key={tag.id}>
-      <p>{tag.name}</p>
-    </div>
-  ));
+  // remove html elements
+  const formatDescription = (description) => {
+    console.log(description);
+    const descriptionArray = description.split("");
+
+    descriptionArray.forEach((char) => {
+      if (char === "<") {
+        descriptionArray.splice(descriptionArray.indexOf(char), 3);
+      }
+      if (char === "/") {
+        descriptionArray.splice(descriptionArray.indexOf(char), 2);
+      }
+    });
+    descriptionArray.forEach((char) => {
+      if (char === ">") {
+        descriptionArray.splice(descriptionArray.indexOf(char), 1);
+      }
+    });
+    const newString = descriptionArray.join("");
+    console.log(newString);
+    return newString;
+  };
 
   const gameStyles = {
     display: "grid",
@@ -65,7 +82,9 @@ const Game = () => {
           <div className="info">
             <p>Rating: {game.rating}</p>
             <p>Released: {game.released}</p>
-            <div className="tags">{tagsArray}</div>
+            <div className="description">
+              {formatDescription(game.description)}
+            </div>
             <div className="add-to-cart">
               <button type="button" onClick={() => addToCart(product)}>
                 Add to Cart
