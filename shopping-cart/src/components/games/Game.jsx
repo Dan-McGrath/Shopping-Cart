@@ -16,7 +16,6 @@ const Game = () => {
 
   // remove html elements
   const formatDescription = (description) => {
-    console.log(description);
     const descriptionArray = description.split("");
 
     descriptionArray.forEach((char) => {
@@ -33,7 +32,6 @@ const Game = () => {
       }
     });
     const newString = descriptionArray.join("");
-    console.log(newString);
     return newString;
   };
 
