@@ -96,7 +96,7 @@ const Rating = styled.p``;
 
 const Released = styled.p``;
 
-const DescriptionWrapper = styled.p`
+const DescriptionWrapper = styled.div`
   max-height: 300px;
   /* remove scroll if not needed */
   overflow-y: auto;
