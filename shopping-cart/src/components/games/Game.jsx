@@ -3,6 +3,20 @@ import PropTypes from "prop-types";
 import { fetchGame } from "../../helpers/api";
 import { CartContext } from "../App";
 import { useContext } from "react";
+import {
+  Wrapper,
+  Title,
+  GameWrapper,
+  ImgWrapper,
+  Image,
+  InfoWrapper,
+  ButtonWrapper,
+  Button,
+  Rating,
+  Released,
+  Description,
+  DescriptionWrapper,
+} from "./gameStyles.js";
 
 export const loader = async ({ params }) => {
   const game = await fetchGame(params.gameId);
@@ -35,79 +49,27 @@ const Game = () => {
     return newString;
   };
 
-  const gameStyles = {
-    display: "grid",
-    gap: "1em",
-    background: "#262626",
-    margin: "1rem",
-    padding: "1rem",
-    paddingBottom: "3rem",
-    borderRadius: "10px",
-  };
-
-  const gameImageStyles = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
-  };
-
-  const buttonStyles = {
-    width: "100%",
-    padding: "0.75rem",
-    borderRadius: "20px",
-    border: "none",
-    background: "#553B8C",
-    margin: "1rem",
-  };
-
   return (
-    <>
-      <div className="game" style={gameStyles}>
-        <h2 style={{ textAlign: "center", fontSize: "24px", color: "#D923BA" }}>
-          {game.name}
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            maxHeight: "500px",
-            maxWidth: "1500px",
-            margin: "0 auto",
-            gap: "1rem",
-          }}
-        >
-          <div className="img" style={gameImageStyles}>
-            <img
-              src={game.background_image}
-              alt={game.title}
-              style={{
-                width: "100%",
-                background: "no-repeat cover center",
-                height: "auto",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-          <div className="info" style={{ color: "#04588C" }}>
-            <p>Rating: {game.rating}</p>
-            <p>Released: {game.released}</p>
-            <div className="description">
-              {formatDescription(game.description)}
-            </div>
-            <div className="add-to-cart">
-              <button
-                type="button"
-                onClick={() => addToCart(product)}
-                style={buttonStyles}
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    <Wrapper>
+      <Title>{game.name}</Title>
+      <GameWrapper>
+        <ImgWrapper>
+          <Image src={game.background_image} alt={game.title}></Image>
+        </ImgWrapper>
+        <InfoWrapper>
+          <Rating>Rating: {game.rating}</Rating>
+          <Released>Released: {game.released}</Released>
+          <DescriptionWrapper>
+            <Description>{formatDescription(game.description)}</Description>
+          </DescriptionWrapper>
+          <ButtonWrapper>
+            <Button type="button" onClick={() => addToCart(product)}>
+              Add to Cart
+            </Button>
+          </ButtonWrapper>
+        </InfoWrapper>
+      </GameWrapper>
+    </Wrapper>
   );
 };
 
