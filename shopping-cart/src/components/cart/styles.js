@@ -11,7 +11,7 @@ const CartWrapper = styled.div`
 const Title = styled.h1`
   text-align: center;
   color: #0bb3d9;
-  font-size: 30px;
+  font-size: 3rem;
 `;
 
 const List = styled.ul`
