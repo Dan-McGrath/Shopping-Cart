@@ -3,9 +3,10 @@ import styled from "styled-components";
 const CartWrapper = styled.div`
   background: #262626;
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 1rem;
   min-height: 500px;
+  border-radius: 20px;
 `;
 
 const Title = styled.h1`
