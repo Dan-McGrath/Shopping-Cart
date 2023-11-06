@@ -9,13 +9,15 @@ import {
   GameWrapper,
   ImgWrapper,
   Image,
-  InfoWrapper,
+  SideWrapper,
   ButtonWrapper,
   Button,
   Rating,
   Released,
   Description,
   DescriptionWrapper,
+  InfoWrapper,
+  DescriptionTitle,
 } from "./gameStyles.js";
 
 export const loader = async ({ params }) => {
@@ -56,10 +58,13 @@ const Game = () => {
         <ImgWrapper>
           <Image src={game.background_image} alt={game.title}></Image>
         </ImgWrapper>
-        <InfoWrapper>
-          <Rating>Rating: {game.rating}</Rating>
-          <Released>Released: {game.released}</Released>
+        <SideWrapper>
+          <InfoWrapper>
+            <Rating>Rating: {game.rating}</Rating>
+            <Released>Released: {game.released}</Released>
+          </InfoWrapper>
           <DescriptionWrapper>
+            <DescriptionTitle>Description</DescriptionTitle>
             <Description>{formatDescription(game.description)}</Description>
           </DescriptionWrapper>
           <ButtonWrapper>
@@ -67,7 +72,7 @@ const Game = () => {
               Add to Cart
             </Button>
           </ButtonWrapper>
-        </InfoWrapper>
+        </SideWrapper>
       </GameWrapper>
     </Wrapper>
   );
