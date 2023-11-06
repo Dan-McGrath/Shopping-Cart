@@ -29,7 +29,7 @@ const App = () => {
     const getTotal = () => {
       let newTotal = 0;
       cartItems.forEach((game) => {
-        newTotal += Number(game.price);
+        newTotal += Number(game.price * game.quantity);
       });
       setTotal(newTotal);
     };
@@ -37,9 +37,25 @@ const App = () => {
   }, [cartItems]);
 
   const addToCart = (game) => {
+    let inCart;
+    cartItems.forEach((ele) => {
+      if (ele.id === game.id) {
+        inCart = true;
+      }
+    });
+
+    if (inCart) {
+      cartItems.forEach((ele) => {
+        if (ele.id === game.id) {
+          ele.quantity += 1;
+        }
+      });
+    } else {
+      game.price = "59.99";
+      game.quantity = 1;
+      setCartItems([...cartItems, game]);
+    }
     //set defult price
-    game.price = "59.99";
-    setCartItems([...cartItems, game]);
   };
 
   const removeFromCart = (game) => {
