@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   gap: 1em;
   background: #262626;
   margin: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   padding-bottom: 3rem;
   border-radius: 20px;
 
@@ -31,8 +31,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  font-size: 24px;
-  color: #d923ba;
+  font-size: 3rem;
+  color: #04588c;
+  margin-bottom: 1rem;
 `;
 
 const GameWrapper = styled.div`
@@ -56,11 +57,13 @@ const Image = styled.img`
   background: no-repeat cover center;
   height: auto;
   object-fit: cover;
+  border-radius: 20px;
 `;
 
-const InfoWrapper = styled.div`
+const SideWrapper = styled.div`
   color: #04588c;
-  overflow: scroll;
+  /* remove scroll if not needed */
+  overflow-y: auto;
 `;
 
 const ButtonWrapper = styled.div``;
@@ -71,25 +74,45 @@ const Button = styled.button`
   border-radius: 20px;
   border: none;
   background: #553b8c;
-  margin: 1rem;
+  margin: 1rem 0;
   text-aling: center;
   color: #13f2dc;
   font-size: 1.6rem;
   transition: all ease-in-out 0.4s;
+  max-width: 90%;
 
   &:hover {
-    color: #553b8c;
-    background: #13f2dc;
+    color: #0bb3d9;
+    background: #d923ba;
   }
+`;
+
+const InfoWrapper = styled.div`
+  color: #d923ba;
+  font-size: 20px;
 `;
 
 const Rating = styled.p``;
 
 const Released = styled.p``;
 
-const DescriptionWrapper = styled.p``;
+const DescriptionWrapper = styled.p`
+  max-height: 300px;
+  /* remove scroll if not needed */
+  overflow-y: auto;
+  margin: 1rem 0;
+`;
 
-const Description = styled.div``;
+const DescriptionTitle = styled.h2`
+  font-size: 1.8rem;
+  color: #0bb3d9;
+  margin-bottom: 1rem;
+`;
+
+const Description = styled.div`
+  max-width: 90%;
+  font-size: 1.2rem;
+`;
 
 export {
   Wrapper,
@@ -97,11 +120,13 @@ export {
   GameWrapper,
   ImgWrapper,
   Image,
-  InfoWrapper,
+  SideWrapper,
   ButtonWrapper,
   Button,
   Rating,
   Released,
   Description,
   DescriptionWrapper,
+  InfoWrapper,
+  DescriptionTitle,
 };
