@@ -2,27 +2,14 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { CartContext } from "../App";
+import { Navigation, List } from "./navStyles";
 
 const Nav = ({ clickLinkHandler }) => {
   const { cartItems } = useContext(CartContext);
 
-  const ulStyles = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    flexDirection: "column",
-    gap: "1rem",
-    margin: "1rem",
-  };
-
-  const navStyles = {
-    background: "#262626",
-    fontSize: "20px",
-    color: "#0BB3D9",
-  };
-
   return (
-    <nav style={navStyles}>
-      <ul style={ulStyles}>
+    <Navigation>
+      <List>
         <li onClick={clickLinkHandler}>
           <Link to="/">Home</Link>
         </li>
@@ -35,8 +22,8 @@ const Nav = ({ clickLinkHandler }) => {
             <div className="cart-icon">{cartItems.length}</div>
           </Link>
         </li>
-      </ul>
-    </nav>
+      </List>
+    </Navigation>
   );
 };
 
