@@ -7,6 +7,14 @@ import { Navigation, List } from "./navStyles";
 const Nav = ({ clickLinkHandler }) => {
   const { cartItems } = useContext(CartContext);
 
+  const getTotalItems = () => {
+    let total = 0;
+    cartItems.forEach((ele) => {
+      total += ele.quantity;
+    });
+    return total;
+  };
+
   return (
     <Navigation>
       <List>
@@ -19,7 +27,7 @@ const Nav = ({ clickLinkHandler }) => {
         <li onClick={clickLinkHandler}>
           <Link to="/cart">
             <span>Cart</span>
-            <div className="cart-icon">{cartItems.length}</div>
+            <div className="cart-icon">{getTotalItems()}</div>
           </Link>
         </li>
       </List>
