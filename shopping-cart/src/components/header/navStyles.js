@@ -6,6 +6,7 @@ const Navigation = styled.nav`
   color: #0bb3d9;
   height: 80px;
   width: 300px;
+  border-radius: 0 0 10px 10px;
 `;
 
 const List = styled.ul`
