@@ -1,11 +1,23 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { CartContext } from "../App.jsx";
-import { Title, List, ListItems, CartWrapper, Total } from "./styles.js";
+import {
+  GameTitle,
+  Title,
+  List,
+  ListItems,
+  CartWrapper,
+  Total,
+  GameImg,
+  GameWrapper,
+  GamePrice,
+  GameRightWrapper,
+  RemoveButton,
+  Quantity,
+} from "./styles.js";
 
 const Cart = () => {
   const { cartItems, removeFromCart, total } = useContext(CartContext);
-
   return (
     <CartWrapper>
       <Title>Cart</Title>
@@ -16,17 +28,24 @@ const Cart = () => {
           cartItems.map((game) => (
             <>
               <ListItems key={game.id}>
-                <h2>{game.name}</h2>
-                <img src={game.background_image} alt={game.name} />
-                <p>Price: ${game.price}</p>
-
-                <button
-                  className="remove-game"
-                  type="button"
-                  onClick={() => removeFromCart(game)}
-                >
-                  Remove from Cart
-                </button>
+                <GameTitle>{game.name}</GameTitle>
+                <GameWrapper>
+                  <GameImg
+                    src={game.background_image}
+                    alt={game.name}
+                  ></GameImg>
+                  <GameRightWrapper>
+                    <GamePrice>Price: ${game.price}</GamePrice>
+                    <Quantity>{game.quantity}</Quantity>
+                    <RemoveButton
+                      className="remove-game"
+                      type="button"
+                      onClick={() => removeFromCart(game)}
+                    >
+                      Remove from Cart
+                    </RemoveButton>
+                  </GameRightWrapper>
+                </GameWrapper>
               </ListItems>
             </>
           ))
