@@ -58,6 +58,7 @@ const GameWrapper = styled.div`
 
 const GameImg = styled.img`
   max-width: 500px;
+  border-radius: 20px;
 `;
 
 const GameRightWrapper = styled.div`
