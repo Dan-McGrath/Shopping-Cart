@@ -1,35 +1,41 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../App";
-import { Navigation, List } from "./navStyles";
+import { Navigation, List, LinkItem, CartIcon } from "./navStyles";
 
 const Nav = ({ clickLinkHandler }) => {
   const { cartItems } = useContext(CartContext);
+  const [total, setTotal] = useState(0);
 
-  const getTotalItems = () => {
-    let total = 0;
-    cartItems.forEach((ele) => {
-      total += ele.quantity;
-    });
-    return total;
-  };
+  useEffect(() => {
+    const getTotalItems = () => {
+      let newTotal = 0;
+      cartItems.forEach((ele) => {
+        newTotal += ele.quantity;
+      });
+      setTotal(newTotal);
+    };
+    getTotalItems();
+  }, [cartItems]);
 
   return (
     <Navigation>
       <List>
-        <li onClick={clickLinkHandler}>
+        <LinkItem onClick={clickLinkHandler}>
           <Link to="/">Home</Link>
-        </li>
-        <li onClick={clickLinkHandler}>
+        </LinkItem>
+        <LinkItem onClick={clickLinkHandler}>
           <Link to="/games">Games</Link>
-        </li>
-        <li onClick={clickLinkHandler}>
+        </LinkItem>
+        <LinkItem onClick={clickLinkHandler}>
           <Link to="/cart">
             <span>Cart</span>
-            <div className="cart-icon">{getTotalItems()}</div>
+            <CartIcon>
+              {total > 0 ? <p className="total">{total}</p> : <p></p>}
+            </CartIcon>
           </Link>
-        </li>
+        </LinkItem>
       </List>
     </Navigation>
   );
