@@ -35,8 +35,8 @@ const Cart = () => {
                     alt={game.name}
                   ></GameImg>
                   <GameRightWrapper>
-                    <GamePrice>Price: ${game.price}</GamePrice>
                     <Quantity>Quantity: {game.quantity}</Quantity>
+                    <GamePrice>Price: ${game.price}</GamePrice>
                     <RemoveButton
                       className="remove-game"
                       type="button"
