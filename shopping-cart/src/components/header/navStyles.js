@@ -16,4 +16,10 @@ const List = styled.ul`
   margin: 1rem;
 `;
 
-export { Navigation, List };
+const CartIcon = styled.div`
+  text-align: right;
+`;
+
+const LinkItem = styled.li``;
+
+export { Navigation, List, LinkItem, CartIcon };
