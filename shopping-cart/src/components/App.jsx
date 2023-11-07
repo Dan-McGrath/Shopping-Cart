@@ -48,6 +48,7 @@ const App = () => {
       cartItems.forEach((ele) => {
         if (ele.id === game.id) {
           ele.quantity += 1;
+          setCartItems([...cartItems]);
         }
       });
     } else {
