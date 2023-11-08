@@ -34,6 +34,10 @@ const Title = styled.h1`
   font-size: 3rem;
   color: #04588c;
   margin-bottom: 1rem;
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
 const GameWrapper = styled.div`
@@ -43,13 +47,21 @@ const GameWrapper = styled.div`
   max-width: 1500px;
   margin: 0 auto;
   gap: 1rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+
+  @media (max-width: 900px) {
+    max-height: 500px;
+    margin: 0 auto;
+  }
 `;
 
 const Image = styled.img`
@@ -58,12 +70,22 @@ const Image = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 20px;
+
+  @media (max-width: 900px) {
+    max-height: 200px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
 `;
 
 const SideWrapper = styled.div`
   color: #04588c;
   /* remove scroll if not needed */
   overflow-y: auto;
+
+  @media (max-width: 900px) {
+    overflow-y: visible;
+  }
 `;
 
 const ButtonWrapper = styled.div``;
@@ -89,7 +111,7 @@ const Button = styled.button`
 
 const InfoWrapper = styled.div`
   color: #d923ba;
-  font-size: 20px;
+  font-size: 1.2rem;
 `;
 
 const Rating = styled.p``;
@@ -101,17 +123,29 @@ const DescriptionWrapper = styled.div`
   /* remove scroll if not needed */
   overflow-y: auto;
   margin: 1rem 0;
+
+  @media (max-width: 900px) {
+    max-height: 20%;
+  }
 `;
 
 const DescriptionTitle = styled.h2`
   font-size: 1.8rem;
   color: #0bb3d9;
   margin-bottom: 1rem;
+
+  @media (max-width: 900px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.div`
   max-width: 90%;
   font-size: 1.2rem;
+
+  @media (max-width: 900px) {
+    font-size: 1rem;
+  }
 `;
 
 export {
