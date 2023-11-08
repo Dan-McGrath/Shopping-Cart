@@ -7,13 +7,26 @@ const Wrapper = styled.div`
   border-radius: 10px;
   color: #d923ba;
   margin: 1rem;
+  max-width: 90%;
 `;
 
 const GamesList = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  maxwidth: 100vw;
+  max-width: 80&;
+
+  @media (max-width: 1650px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 1250px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Title = styled.h1`
@@ -22,6 +35,10 @@ const Title = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   color: #0bb3d9;
+
+  @media (max-width: 450px) {
+    font-size: 2rem;
+  }
 `;
 
 const Game = styled.div`
@@ -30,6 +47,9 @@ const Game = styled.div`
   text-align: center;
   border-radius: 10px;
   color: #d923ba;
+  @media (max-width: 450px) {
+    max-width: auto;
+  }
 `;
 
 const GameTitle = styled.h2`
@@ -37,6 +57,10 @@ const GameTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1rem;
+
+  @media (max-width: 450px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Image = styled.img`
@@ -44,12 +68,21 @@ const Image = styled.img`
   max-height: 500px;
   border-radius: 10px;
   margin: 1rem;
+
+  @media (max-width: 450px) {
+    max-width: 90%;
+  }
 `;
 
 const GameInfo = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+
+  @media (max-width: 450px) {
+    font-size: 0.75rem;
+    gap: 0.2rem;
+  }
 `;
 
 const TagsWrapper = styled.div``;
