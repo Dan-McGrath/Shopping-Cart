@@ -107,6 +107,11 @@ const Button = styled.button`
     color: #0bb3d9;
     background: #d923ba;
   }
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    padding: 0.5em;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -126,6 +131,10 @@ const DescriptionWrapper = styled.div`
 
   @media (max-width: 900px) {
     max-height: 20%;
+  }
+
+  @media (max-width: 400px) {
+    max-height: 15%;
   }
 `;
 

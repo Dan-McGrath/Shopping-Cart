@@ -69,6 +69,10 @@ const RemoveButton = styled.button`
   @media (max-width: 750px) {
     font-size: 1rem;
   }
+
+  @media (max-width: 500px) {
+    max-width: 90%;
+  }
 `;
 
 const GameWrapper = styled.div`
