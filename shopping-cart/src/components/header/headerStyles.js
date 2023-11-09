@@ -14,10 +14,14 @@ const Logo = styled.img`
   margin-left: 1em;
 
   @media (max-width: 1300px) {
-    max-width: 75px;
+    max-height: 75px;
     max-width: 75px;
     margin-top: 0.2em;
     margin-left: 0.2em;
+  }
+
+  @media (max-width: 900px) {
+    max-height: 50px;
   }
 `;
 
