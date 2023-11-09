@@ -17,8 +17,6 @@ export const loader = async () => {
 };
 
 const App = () => {
-  const [navIsOpen, setNavIsOpen] = useState(false);
-  const [windowDimension, setWindowDimension] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
   const { games } = useLoaderData();
@@ -65,40 +63,12 @@ const App = () => {
     setCartItems([...cartItems]);
   };
 
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimension(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isMobile = windowDimension <= 640;
-
-  const navHandler = () => {
-    setNavIsOpen(!navIsOpen);
-  };
-
-  const clickLinkHandler = () => {
-    setNavIsOpen(false);
-  };
-
   return (
     <>
       <CartContext.Provider
         value={{ cartItems, products, total, addToCart, removeFromCart }}
       >
-        <Header
-          isMobile={isMobile}
-          navHandler={navHandler}
-          clickLinkHandle={clickLinkHandler}
-          navIsOpen={navIsOpen}
-        />
+        <Header />
         <Outlet />
       </CartContext.Provider>
     </>
