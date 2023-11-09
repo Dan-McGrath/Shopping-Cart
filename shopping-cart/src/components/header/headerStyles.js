@@ -13,7 +13,7 @@ const Logo = styled.img`
   margin-top: 1em;
   margin-left: 1em;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     max-height: 75px;
     max-width: 75px;
     margin-top: 0.2em;
