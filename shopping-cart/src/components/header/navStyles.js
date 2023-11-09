@@ -7,6 +7,12 @@ const Navigation = styled.nav`
   height: 80px;
   width: 300px;
   border-radius: 0 0 10px 10px;
+
+  @media (max-width: 900px) {
+    width: 200px;
+    height: 50px;
+    font-size: 1rem;
+  }
 `;
 
 const List = styled.ul`
