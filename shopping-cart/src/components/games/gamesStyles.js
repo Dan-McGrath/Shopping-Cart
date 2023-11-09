@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   text-align: center;
   border-radius: 10px;
   color: #d923ba;
-  margin: 1rem;
+  margin: 1rem auto;
   max-width: 90%;
 `;
 
