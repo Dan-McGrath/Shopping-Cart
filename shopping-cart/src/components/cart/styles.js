@@ -7,12 +7,19 @@ const CartWrapper = styled.div`
   padding: 1rem;
   min-height: 500px;
   border-radius: 20px;
+  @media (max-width: 1400px) {
+    margin: 0.8em auto;
+  }
 `;
 
 const Title = styled.h1`
   text-align: center;
   color: #0bb3d9;
   font-size: 3rem;
+
+  @media (max-width: 750px) {
+    font-size: 2rem;
+  }
 `;
 
 const List = styled.ul`
@@ -28,6 +35,10 @@ const ListItems = styled.li``;
 const GameTitle = styled.h2`
   margin: 1rem;
   font-size: 1.8rem;
+
+  @media (max-width: 750px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const GamePrice = styled.p``;
@@ -49,16 +60,37 @@ const RemoveButton = styled.button`
     color: #0bb3d9;
     background: #d923ba;
   }
+
+  @media (max-width: 1400px) {
+    margin: 0.8em auto;
+    max-width: 50%;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 1rem;
+  }
 `;
 
 const GameWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const GameImg = styled.img`
   max-width: 500px;
   border-radius: 20px;
+
+  @media (max-width: 1400px) {
+    margin: 0.5em auto;
+  }
+
+  @media (max-width: 750px) {
+    max-width: 90%;
+  }
 `;
 
 const GameRightWrapper = styled.div`
@@ -67,13 +99,19 @@ const GameRightWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
-const Quantity = styled.p``;
+const Quantity = styled.p`
+  margin: 0.5em;
+`;
 
 const Total = styled.div`
   text-align: right;
   margin-right: 2rem;
   color: #d923ba;
   font-size: 2rem;
+
+  @media (max-width: 750px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export {
